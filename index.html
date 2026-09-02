@@ -1,775 +1,331 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
+    <title>THALA FARM | Du champ à votre table</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>THALA FARM | Du champ à votre table</title>
-
-  <meta
-    name="description"
-    content="THALA FARM – Agriculture locale à Thala, Kasserine. Olives, huile d'olive, pistaches et ail."
-  >
-
-  <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">THALA FARM 🌿</div>
 
-  <!-- ================= NAVBAR ================= -->
-
-  <header class="navbar">
-
-    <a href="#accueil" class="logo">
-
-      <span>🌿</span>
-
-      <strong>THALA FARM</strong>
-
-    </a>
-
-
-    <nav>
-
-      <a href="#accueil">
-        Accueil
-      </a>
-
-      <a href="#ferme">
-        Notre ferme
-      </a>
-
-      <a href="#produits">
-        Produits
-      </a>
-
-      <a href="#galerie">
-        Galerie
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
-
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#ferme">Notre ferme</a>
+            <a href="#produits">Produits</a>
+            <a href="#qr">Traçabilité</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-  </header>
 
+    <!-- HERO -->
+    <header class="hero" id="accueil">
 
+        <div class="hero-content">
 
-  <!-- ================= MAIN ================= -->
+            <span>THALA – KASSERINE – TUNISIE</span>
 
-  <main>
+            <h1>THALA FARM</h1>
 
+            <p>
+                Du champ à votre table.
+            </p>
 
-    <!-- ================= HERO ================= -->
+            <div class="hero-buttons">
 
-    <section id="accueil" class="hero">
+                <a href="#produits" class="btn btn-primary">
+                    Découvrir nos produits
+                </a>
 
-      <div class="hero-overlay"></div>
+                <a href="#contact" class="btn btn-secondary">
+                    Nous contacter
+                </a>
 
-
-      <div class="hero-content">
-
-        <p class="small-title">
-          🌱 AGRICULTURE LOCALE
-        </p>
-
-
-        <h1>
-          THALA
-          <span>FARM</span>
-        </h1>
-
-
-        <p class="location">
-          📍 Thala – Kasserine – Tunisie
-        </p>
-
-
-        <p class="slogan">
-          Du champ à votre table.
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="#produits"
-            class="btn primary"
-          >
-            Découvrir nos produits
-          </a>
-
-
-          <a
-            href="#ferme"
-            class="btn secondary"
-          >
-            Notre histoire
-          </a>
+            </div>
 
         </div>
 
-      </div>
+    </header>
 
 
-      <div class="scroll-indicator">
-        ↓ Découvrez notre ferme
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= FERME ================= -->
-
-    <section
-      id="ferme"
-      class="section farm-section"
-    >
-
-      <div class="section-title">
-
-        <p>
-          NOTRE TERRE
-        </p>
-
-
-        <h2>
-
-          Bienvenue à<br>
-
-          <span>THALA FARM</span>
-
-        </h2>
-
-      </div>
-
-
-      <div class="farm-content">
-
-
-        <div class="farm-intro">
-
-          <span class="number">
-            01
-          </span>
-
-
-          <h3>
-
-            Une agriculture locale,
-            proche de la terre.
-
-          </h3>
-
-        </div>
-
-
+    <!-- NOTRE FERME -->
+    <section class="farm-section" id="ferme">
 
         <div class="farm-text">
 
-          <p>
+            <span class="section-tag">NOTRE FERME</span>
 
-            THALA FARM est un projet agricole situé à Thala,
-            dans la région de Kasserine en Tunisie.
+            <h2>Une agriculture authentique à Thala</h2>
 
-          </p>
+            <p>
+                THALA FARM est une ferme située à Thala,
+                dans la région de Kasserine en Tunisie.
+            </p>
 
+            <p>
+                Nous valorisons les produits agricoles locaux
+                et travaillons pour proposer des produits naturels,
+                authentiques et issus directement de notre terre.
+            </p>
 
-          <p>
-
-            Notre ambition est de valoriser les richesses
-            de notre terre et de faire découvrir des produits
-            agricoles authentiques, issus de notre région.
-
-          </p>
-
-
-          <p>
-
-            Notre univers s'articule autour de quatre productions :
-
-            <strong>
-              olives, huile d'olive, pistaches et ail.
-            </strong>
-
-          </p>
+            <p>
+                🌿 Olives · Huile d'olive · Pistaches · Ail
+            </p>
 
         </div>
-
-      </div>
 
     </section>
 
 
+    <!-- PRODUITS -->
+    <section class="products-section" id="produits">
 
-    <!-- ================= PRODUITS ================= -->
+        <span class="section-tag">NOS PRODUITS</span>
 
-    <section
-      id="produits"
-      class="section products-section"
-    >
+        <h2>Découvrez nos produits</h2>
 
-      <div class="section-title">
+        <div class="products-grid">
+
+            <!-- OLIVES -->
+            <div class="product-card">
+
+                <div class="product-icon">🫒</div>
+
+                <h3>Olives</h3>
+
+                <p>
+                    Des olives cultivées à Thala,
+                    au cœur de la région de Kasserine.
+                </p>
+
+                <a href="olives.html" class="btn btn-primary">
+                    Découvrir
+                </a>
+
+            </div>
+
+
+            <!-- HUILE -->
+            <div class="product-card featured">
+
+                <div class="product-icon">🫙</div>
+
+                <h3>Huile d'olive</h3>
+
+                <p>
+                    Une huile d'olive naturelle issue
+                    directement de notre ferme.
+                </p>
+
+                <a href="huile-olive.html" class="btn btn-primary">
+                    Découvrir
+                </a>
+
+            </div>
+
+
+            <!-- PISTACHES -->
+            <div class="product-card">
+
+                <div class="product-icon">🥜</div>
+
+                <h3>Pistaches</h3>
+
+                <p>
+                    Des pistaches cultivées avec soin
+                    dans notre région.
+                </p>
+
+                <a href="pistaches.html" class="btn btn-primary">
+                    Découvrir
+                </a>
+
+            </div>
+
+
+            <!-- AIL -->
+            <div class="product-card">
+
+                <div class="product-icon">🧄</div>
+
+                <h3>Ail</h3>
+
+                <p>
+                    Un ail naturel et authentique
+                    produit à Thala.
+                </p>
+
+                <a href="ail.html" class="btn btn-primary">
+                    Découvrir
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QR / TRAÇABILITÉ -->
+    <section class="traceability-section" id="qr">
+
+        <span class="section-tag">TRAÇABILITÉ</span>
+
+        <h2>Scannez pour découvrir THALA FARM</h2>
 
         <p>
-          DE NOTRE TERRE
+            Chaque QR Code vous permet d'accéder directement
+            aux informations de notre ferme ou de nos produits.
         </p>
 
 
-        <h2>
-          Nos produits
-        </h2>
+        <div class="qr-grid">
+
+            <!-- FARM -->
+            <div class="qr-card">
+
+                <img src="qr_farm_v2_REAL.png" alt="QR Code THALA FARM">
+
+                <h3>🌿 Notre ferme</h3>
+
+                <p>Découvrez THALA FARM</p>
+
+            </div>
 
 
-        <span class="products-intro">
-          Des produits agricoles issus du terroir de Thala.
-        </span>
+            <!-- HUILE -->
+            <div class="qr-card">
 
-      </div>
+                <img src="qr_olive_wreath_REAL.png" alt="QR Code Huile d'olive">
 
+                <h3>🫙 Huile d'olive</h3>
 
+                <p>Informations sur notre huile</p>
 
-      <div class="products-grid">
-
-
-        <!-- ================= OLIVES ================= -->
-
-        <article class="product-card">
-
-          <div class="product-number">
-            01
-          </div>
+            </div>
 
 
-          <div class="product-icon">
-            🫒
-          </div>
+            <!-- OLIVES -->
+            <div class="qr-card">
+
+                <img src="qr_olives_terracotta_REAL.png" alt="QR Code Olives">
+
+                <h3>🫒 Olives</h3>
+
+                <p>Découvrez nos olives</p>
+
+            </div>
 
 
-          <div class="product-content">
+            <!-- PISTACHES -->
+            <div class="qr-card">
 
-            <span class="product-category">
-              PRODUIT AGRICOLE
-            </span>
+                <img src="qr_pistaches-1_REAL.png" alt="QR Code Pistaches">
+
+                <h3>🥜 Pistaches</h3>
+
+                <p>Découvrez nos pistaches</p>
+
+            </div>
 
 
-            <h3>
-              Olives
-            </h3>
+            <!-- AIL -->
+            <div class="qr-card">
+
+                <img src="qr_ail_REAL.png" alt="QR Code Ail">
+
+                <h3>🧄 Ail</h3>
+
+                <p>Découvrez notre ail</p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-            <p>
+    <!-- LOCALISATION -->
+    <section class="location-section">
 
-              Des olives cultivées dans les terres de Thala,
-              au cœur de Kasserine.
+        <span class="section-tag">LOCALISATION</span>
 
-            </p>
+        <h2>📍 Où sommes-nous ?</h2>
+
+        <p>
+            THALA FARM<br>
+            JQ96+WPF Sidi Shil<br>
+            Thala – Kasserine – Tunisie
+        </p>
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=JQ96%2BWPF%20Sidi%20Shil%2C%20Thala%2C%20Kasserine%2C%20Tunisie"
+            target="_blank"
+            class="btn btn-primary">
+            Voir sur Google Maps
+        </a>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+        <span class="section-tag">CONTACT</span>
+
+        <h2>Contactez THALA FARM</h2>
+
+        <p>
+            Pour plus d'informations ou pour commander
+            nos produits, contactez-nous directement.
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a
+                href="https://wa.me/21620062790?text=Bonjour%20THALA%20FARM%20%F0%9F%8C%BF%0AJe%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20produits."
+                target="_blank"
+                class="btn btn-primary">
+                📱 WhatsApp
+            </a>
 
 
             <a
-              href="https://wa.me/21620062790?text=Bonjour%20THALA%20FARM%20%F0%9F%8C%BF%0AJe%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20olives."
-              target="_blank"
-              rel="noopener"
-              class="product-link"
-            >
-
-              Commander <span>→</span>
-
+                href="https://www.instagram.com/Khali_l200623/"
+                target="_blank"
+                class="btn btn-secondary">
+                📸 Instagram
             </a>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- ================= HUILE D'OLIVE ================= -->
-
-        <article class="product-card featured">
-
-          <div class="product-number">
-            02
-          </div>
-
-
-          <div class="product-icon">
-            🫙
-          </div>
-
-
-          <div class="product-content">
-
-            <span class="product-category">
-              PRODUIT SIGNATURE
-            </span>
-
-
-            <h3>
-              Huile d'olive
-            </h3>
-
-
-            <p>
-
-              Une huile issue de nos olives et inspirée
-              par le savoir-faire agricole local.
-
-            </p>
-
-
-            <!-- LIEN VERS LA PAGE HUILE D'OLIVE -->
-
-            <a
-              href="huile-olive.html"
-              class="product-link"
-            >
-
-              Découvrir <span>→</span>
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- ================= PISTACHES ================= -->
-
-        <article class="product-card">
-
-          <div class="product-number">
-            03
-          </div>
-
-
-          <div class="product-icon">
-            🌰
-          </div>
-
-
-          <div class="product-content">
-
-            <span class="product-category">
-              TERROIR DE THALA
-            </span>
-
-
-            <h3>
-              Pistaches
-            </h3>
-
-
-            <p>
-
-              Une production adaptée au terroir et aux
-              conditions agricoles de notre région.
-
-            </p>
 
 
             <a
-              href="https://wa.me/21620062790?text=Bonjour%20THALA%20FARM%20%F0%9F%8C%BF%0AJe%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20pistaches."
-              target="_blank"
-              rel="noopener"
-              class="product-link"
-            >
-
-              Commander <span>→</span>
-
+                href="https://www.facebook.com/share/1FRGfoJtLX/"
+                target="_blank"
+                class="btn btn-secondary">
+                👍 Facebook
             </a>
 
-          </div>
-
-        </article>
-
-
-
-        <!-- ================= AIL ================= -->
-
-        <article class="product-card">
-
-          <div class="product-number">
-            04
-          </div>
-
-
-          <div class="product-icon">
-            🧄
-          </div>
-
-
-          <div class="product-content">
-
-            <span class="product-category">
-              AGRICULTURE LOCALE
-            </span>
-
-
-            <h3>
-              Ail
-            </h3>
-
-
-            <p>
-
-              Un produit agricole local cultivé avec soin
-              dans les terres de Thala.
-
-            </p>
-
-
-            <a
-              href="https://wa.me/21620062790?text=Bonjour%20THALA%20FARM%20%F0%9F%8C%BF%0AJe%20souhaite%20avoir%20plus%20d'informations%20sur%20votre%20ail."
-              target="_blank"
-              rel="noopener"
-              class="product-link"
-            >
-
-              Commander <span>→</span>
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-      </div>
+        </div>
 
     </section>
 
 
-
-    <!-- ================= GALERIE ================= -->
-
-    <section
-      id="galerie"
-      class="section gallery-section"
-    >
-
-      <div class="section-title">
+    <!-- FOOTER -->
+    <footer>
 
         <p>
-          NOTRE QUOTIDIEN
+            © 2026 THALA FARM — Du champ à votre table. 🌿
         </p>
 
-
-        <h2>
-          Galerie
-        </h2>
-
-      </div>
-
-
-      <div class="gallery">
-
-
-        <div class="gallery-item">
-
-          <span>
-            🌿
-          </span>
-
-          <h3>
-            Nos terres
-          </h3>
-
-          <p>
-            Au cœur de Thala
-          </p>
-
-        </div>
-
-
-
-        <div class="gallery-item">
-
-          <span>
-            🫒
-          </span>
-
-          <h3>
-            Récolte
-          </h3>
-
-          <p>
-            Le travail de nos terres
-          </p>
-
-        </div>
-
-
-
-        <div class="gallery-item">
-
-          <span>
-            🌱
-          </span>
-
-          <h3>
-            Nos cultures
-          </h3>
-
-          <p>
-            Une agriculture locale
-          </p>
-
-        </div>
-
-
-
-        <div class="gallery-item">
-
-          <span>
-            🧄
-          </span>
-
-          <h3>
-            Nos produits
-          </h3>
-
-          <p>
-            Du champ à votre table
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= TRAÇABILITÉ ================= -->
-
-    <section class="traceability">
-
-      <div class="trace-content">
-
-        <p class="small-title">
-          🔎 TRANSPARENCE
-        </p>
-
-
-        <h2>
-
-          Du champ<br>
-          à votre table.
-
-        </h2>
-
-
-        <p>
-
-          Demain, chaque produit THALA FARM pourra être
-          associé à un QR Code permettant de découvrir
-          son origine, sa récolte et son parcours.
-
-        </p>
-
-
-        <div class="trace-box">
-
-          <strong>
-            THALA FARM
-          </strong>
-
-
-          <span>
-            Traçabilité des produits
-          </span>
-
-
-          <span>
-            📍 JQ96+WPF Sidi Shil
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= LOCALISATION ================= -->
-
-    <section
-      class="section location-section"
-    >
-
-      <div class="section-title">
-
-        <p>
-          NOTRE RÉGION
-        </p>
-
-
-        <h2>
-          Où nous trouver ?
-        </h2>
-
-      </div>
-
-
-      <div class="location-card">
-
-        <div class="location-icon">
-          📍
-        </div>
-
-
-        <h3>
-          THALA FARM
-        </h3>
-
-
-        <p>
-
-          JQ96+WPF Sidi Shil<br>
-          Thala, Kasserine, Tunisie
-
-        </p>
-
-
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=JQ96%2BWPF%20Sidi%20Shil%2C%20Thala%2C%20Kasserine%2C%20Tunisie"
-          target="_blank"
-          rel="noopener"
-          class="btn primary"
-        >
-
-          📍 Voir la ferme sur Google Maps
-
-        </a>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section
-      id="contact"
-      class="contact-section"
-    >
-
-
-      <div class="section-title light">
-
-        <p>
-          RESTONS EN CONTACT
-        </p>
-
-
-        <h2>
-          Contactez THALA FARM
-        </h2>
-
-
-        <p>
-
-          Pour découvrir nos produits, connaître leur
-          disponibilité ou passer une commande.
-
-        </p>
-
-      </div>
-
-
-
-      <div class="contact-buttons">
-
-
-        <!-- WHATSAPP -->
-
-        <a
-          href="https://wa.me/21620062790?text=Bonjour%20THALA%20FARM%20%F0%9F%8C%BF%0AJe%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20produits."
-          target="_blank"
-          rel="noopener"
-          class="contact-btn"
-        >
-
-          📱 WhatsApp
-
-        </a>
-
-
-
-        <!-- INSTAGRAM -->
-
-        <a
-          href="https://www.instagram.com/Khali_l200623/"
-          target="_blank"
-          rel="noopener"
-          class="contact-btn"
-        >
-
-          📷 Instagram
-
-        </a>
-
-
-
-        <!-- FACEBOOK -->
-
-        <a
-          href="https://www.facebook.com/share/1FRGfoJtLX/"
-          target="_blank"
-          rel="noopener"
-          class="contact-btn"
-        >
-
-          📘 Facebook
-
-        </a>
-
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div class="footer-logo">
-      🌿 THALA FARM
-    </div>
-
-
-    <p>
-      Du champ à votre table.
-    </p>
-
-
-    <p class="copyright">
-
-      © 2026 THALA FARM – Thala, Kasserine, Tunisie
-
-    </p>
-
-  </footer>
-
+    </footer>
 
 </body>
-
-  </html>
+</html>
