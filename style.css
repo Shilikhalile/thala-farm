@@ -21,7 +21,6 @@ body {
     margin: auto;
 }
 
-
 /* NAVBAR */
 
 header {
@@ -31,15 +30,13 @@ header {
     width: 100%;
     z-index: 1000;
     background: rgba(24, 45, 24, 0.95);
-    backdrop-filter: blur(8px);
 }
 
 .navbar {
-    max-width: 1150px;
     width: 90%;
+    max-width: 1150px;
     margin: auto;
     min-height: 70px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,47 +46,35 @@ header {
     color: white;
     font-size: 1.4rem;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 28px;
+    gap: 25px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #d6b85a;
 }
 
-
 /* HERO */
 
 .hero {
     min-height: 100vh;
-
     background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.40),
-            rgba(0, 0, 0, 0.50)
-        ),
+        linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.5)),
         url("hero.jpg");
-
     background-size: cover;
     background-position: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     padding: 100px 20px 40px;
 }
@@ -102,14 +87,14 @@ header {
 .hero-content h1 {
     font-size: clamp(3rem, 8vw, 6rem);
     letter-spacing: 5px;
-    margin-bottom: 15px;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-    margin-bottom: 35px;
+    font-size: 1.5rem;
+    margin: 15px 0 30px;
 }
+
+/* BUTTON */
 
 .btn {
     display: inline-block;
@@ -119,14 +104,11 @@ header {
     text-decoration: none;
     font-weight: bold;
     border-radius: 30px;
-    transition: 0.3s;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
     background: white;
 }
-
 
 /* SECTIONS */
 
@@ -146,9 +128,7 @@ header {
     margin: 0 auto 50px;
     text-align: center;
     color: #667060;
-    font-size: 1.05rem;
 }
-
 
 /* VALUES */
 
@@ -163,29 +143,17 @@ header {
     padding: 35px 25px;
     text-align: center;
     border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-}
-
-.value:hover {
-    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
 }
 
 .value span {
     font-size: 2.5rem;
     display: block;
-    margin-bottom: 15px;
 }
 
 .value h3 {
-    margin-bottom: 10px;
     color: #234523;
 }
-
-.value p {
-    color: #6b7566;
-}
-
 
 /* PRODUCTS */
 
@@ -204,27 +172,15 @@ header {
     background: white;
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
-    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
     text-decoration: none;
     color: inherit;
-}
-
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    display: block;
-    transition: 0.4s;
-}
-
-.product-card:hover img {
-    transform: scale(1.05);
 }
 
 .product-content {
@@ -233,21 +189,9 @@ header {
 
 .product-content h3 {
     color: #234523;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
 }
-
-.product-content p {
-    color: #687264;
-    font-size: 0.95rem;
-}
-
 
 /* GALLERY */
-
-.gallery-section {
-    background: #f7f5ed;
-}
 
 .gallery {
     display: grid;
@@ -260,14 +204,7 @@ header {
     height: 260px;
     object-fit: cover;
     border-radius: 16px;
-    display: block;
-    transition: 0.3s;
 }
-
-.gallery img:hover {
-    transform: scale(1.03);
-}
-
 
 /* CONTACT */
 
@@ -281,11 +218,6 @@ header {
     color: white;
 }
 
-.contact-section > .container > p {
-    margin-bottom: 30px;
-    color: #e3e8df;
-}
-
 .contact-info {
     display: flex;
     justify-content: center;
@@ -293,12 +225,66 @@ header {
     flex-wrap: wrap;
 }
 
-.contact-info p {
-    background: rgba(255, 255, 255, 0.10);
-    padding: 14px 25px;
-    border-radius: 30px;
+/* PRODUCT PAGE */
+
+.product-page {
+    min-height: 100vh;
+    padding: 140px 20px 80px;
 }
 
+.product-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.product-info h1 {
+    color: #234523;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.product-description,
+.thank-you {
+    color: #667060;
+    margin-bottom: 15px;
+}
+
+/* QR */
+
+.qr-section {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.qr-section h2 {
+    color: #234523;
+    font-size: 1.3rem;
+}
+
+.qr-section p {
+    color: #687264;
+}
+
+.qr-code {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
+}
 
 /* FOOTER */
 
@@ -307,18 +293,11 @@ footer {
     color: #cfd7ca;
     text-align: center;
     padding: 25px 15px;
-    font-size: 0.9rem;
 }
 
-
-/* TABLET */
+/* MOBILE */
 
 @media (max-width: 900px) {
-
-    .nav-links {
-        gap: 15px;
-    }
-
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -332,11 +311,7 @@ footer {
     }
 }
 
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-
+@media (max-width: 700px) {
     .navbar {
         flex-direction: column;
         padding: 15px 0;
@@ -344,46 +319,17 @@ footer {
 
     .nav-links {
         margin-top: 10px;
-        gap: 12px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .nav-links a {
-        font-size: 0.85rem;
+    .products-grid,
+    .gallery,
+    .product-container {
+        grid-template-columns: 1fr;
     }
 
-    .hero {
-        padding-top: 150px;
-    }
-
-    .hero-content h1 {
-        letter-spacing: 3px;
-    }
-
-    .section {
-        padding: 70px 0;
-    }
-
-    .section h2 {
+    .product-info h1 {
         font-size: 2rem;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-        height: 240px;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
     }
 }
