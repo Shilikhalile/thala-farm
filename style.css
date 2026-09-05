@@ -46,6 +46,7 @@ header {
     color: white;
     font-size: 1.4rem;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -99,6 +100,7 @@ header {
 .btn {
     display: inline-block;
     padding: 14px 30px;
+    margin: 5px;
     background: #d6b85a;
     color: #182d18;
     text-decoration: none;
@@ -108,6 +110,17 @@ header {
 
 .btn:hover {
     background: white;
+}
+
+/* WHATSAPP */
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
 }
 
 /* SECTIONS */
@@ -247,6 +260,7 @@ header {
     max-height: 500px;
     object-fit: cover;
     border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
 }
 
 .product-info h1 {
@@ -298,6 +312,7 @@ footer {
 /* MOBILE */
 
 @media (max-width: 900px) {
+
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -312,6 +327,7 @@ footer {
 }
 
 @media (max-width: 700px) {
+
     .navbar {
         flex-direction: column;
         padding: 15px 0;
