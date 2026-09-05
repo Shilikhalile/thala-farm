@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Olives | THALA FARM</title>
+    <title>Olives de Thala | THALA FARM</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,100 +13,125 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">THALA FARM 🌿</div>
+    <header>
+        <nav class="navbar">
 
-        <div class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="index.html#ferme">Notre ferme</a>
-            <a href="index.html#produits">Produits</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-    </nav>
+            <div class="logo">
+                🌿 THALA FARM
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#ferme">Notre ferme</a></li>
+                <li><a href="index.html#produits">Produits</a></li>
+                <li><a href="index.html#galerie">Galerie</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
 
     <!-- PRODUCT -->
     <main class="product-page">
 
-        <section class="product-hero">
+        <div class="product-container">
 
+            <!-- IMAGE -->
             <div class="product-image">
-                🫒
+
+                <img
+                    src="Screenshot_20260905-134517.png"
+                    alt="Olives de Thala"
+                >
+
             </div>
 
+
+            <!-- INFORMATION -->
             <div class="product-info">
 
-                <span class="product-tag">THALA FARM</span>
+                <span class="product-label">
+                    Produit local
+                </span>
 
-                <h1>Olives</h1>
+                <h1>
+                    🫒 Olives de Thala
+                </h1>
 
                 <p class="product-description">
-                    Découvrez nos olives cultivées avec soin à Thala,
-                    dans la région de Kasserine, en Tunisie.
-                    Un produit agricole naturel issu de notre ferme.
+                    Découvrez les olives cultivées dans les terres de Thala.
+                    Un produit agricole local qui représente le savoir-faire
+                    et la richesse de notre région.
                 </p>
 
-                <div class="product-details">
+
+                <!-- FEATURES -->
+                <div class="product-features">
 
                     <div>
-                        <strong>🌱 Origine</strong>
-                        <p>
-                            JQ96+WPF Sidi Shil<br>
-                            Thala – Kasserine – Tunisie
-                        </p>
+                        <span>🌱</span>
+                        <strong>Agriculture locale</strong>
                     </div>
 
                     <div>
-                        <strong>🌿 Producteur</strong>
-                        <p>THALA FARM</p>
+                        <span>📍</span>
+                        <strong>Thala, Kasserine</strong>
+                    </div>
+
+                    <div>
+                        <span>🌿</span>
+                        <strong>Produit naturel</strong>
                     </div>
 
                 </div>
 
-                <div class="product-buttons">
 
-                    <a
-                        href="https://wa.me/21620062790?text=Bonjour%20THALA%20FARM%20%F0%9F%8C%BF%0AJe%20souhaite%20avoir%20plus%20d'informations%20sur%20vos%20olives."
-                        class="btn btn-primary"
-                        target="_blank">
-                        📱 Commander sur WhatsApp
-                    </a>
+                <!-- QR CODE -->
+                <div class="qr-section">
 
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=JQ96%2BWPF%20Sidi%20Shil%2C%20Thala%2C%20Kasserine%2C%20Tunisie"
-                        class="btn btn-secondary"
-                        target="_blank">
-                        📍 Voir l'origine
-                    </a>
+                    <h2>
+                        Découvrir notre produit
+                    </h2>
+
+                    <p>
+                        Scannez le QR code pour découvrir plus
+                        d'informations sur nos olives.
+                    </p>
+
+                    <img
+                        src="qr_olive_wreath.png"
+                        alt="QR Code Olives de Thala"
+                        class="qr-code"
+                    >
 
                 </div>
 
+
+                <!-- BACK BUTTON -->
+                <a
+                    href="index.html#produits"
+                    class="btn back-btn"
+                >
+                    ← Retour aux produits
+                </a>
+
             </div>
 
-        </section>
-
-        <!-- TRACEABILITY -->
-        <section class="traceability">
-
-            <h2>🔎 Traçabilité</h2>
-
-            <p>
-                Ce produit provient directement de notre ferme
-                située à Thala – Kasserine.
-            </p>
-
-            <div class="trace-box">
-                <strong>📍 Localisation de la ferme</strong>
-                <p>JQ96+WPF Sidi Shil</p>
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
+
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 THALA FARM — Du champ à votre table. 🌿</p>
+
+        <p>
+            © 2026 THALA FARM — Agriculture locale de Thala
+        </p>
+
     </footer>
 
 </body>
-  </html>
+
+</html>
