@@ -123,3 +123,54 @@ menuToggle?.addEventListener('click', () => {
 document.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', () => {
   if (window.innerWidth <= 680 && navLinks) navLinks.style.display = 'none';
 }));
+
+const selectedSymptoms = new Set();
+document.querySelectorAll('.symptom-chip').forEach((chip) => chip.addEventListener('click', () => {
+  const symptom = chip.dataset.symptom;
+  chip.classList.toggle('active');
+  chip.classList.contains('active') ? selectedSymptoms.add(symptom) : selectedSymptoms.delete(symptom);
+}));
+
+function getHistory() { return JSON.parse(localStorage.getItem('agriai-history') || '[]'); }
+function renderHistory() {
+  const history = getHistory();
+  const count = document.querySelector('#historyCount');
+  const list = document.querySelector('#historyList');
+  if (!count || !list) return;
+  count.textContent = history.length;
+  list.innerHTML = history.length ? history.slice(0, 4).map((item) => `<div class="history-item"><strong>${item.title}</strong><span>${item.date}</span></div>`).join('') : '<p class="empty-history">أول فحص تعملو يبان هنا.</p>';
+}
+renderHistory();
+
+const originalAnalyze = analyzeBtn;
+analyzeBtn?.addEventListener('click', () => {
+  setTimeout(() => {
+    const title = document.querySelector('#resultTitle')?.textContent || 'فحص جديد';
+    const history = getHistory();
+    history.unshift({ title, date: new Date().toLocaleDateString('fr-TN') });
+    localStorage.setItem('agriai-history', JSON.stringify(history.slice(0, 8)));
+    document.querySelector('#lastScan').textContent = 'اليوم · الآن';
+    renderHistory();
+  }, 900);
+});
+
+document.querySelector('#editProfile')?.addEventListener('click', () => {
+  const edit = document.querySelector('#profileEdit');
+  edit.hidden = !edit.hidden;
+});
+document.querySelector('#saveProfile')?.addEventListener('click', () => {
+  const name = document.querySelector('#fieldName').value.trim() || 'حقل الزيتون متاعي';
+  const location = document.querySelector('#fieldLocation').value.trim() || 'Thala';
+  document.querySelector('#profileName').textContent = name;
+  document.querySelector('#profileMeta').textContent = `${location} · زيتون · بروفايل شخصي`;
+  document.querySelector('#profileEdit').hidden = true;
+  localStorage.setItem('agriai-profile', JSON.stringify({ name, location }));
+});
+const savedProfile = JSON.parse(localStorage.getItem('agriai-profile') || 'null');
+if (savedProfile) { document.querySelector('#profileName').textContent = savedProfile.name; document.querySelector('#profileMeta').textContent = `${savedProfile.location} · زيتون · بروفايل شخصي`; }
+
+document.querySelector('#shareReport')?.addEventListener('click', async () => {
+  const text = 'AgriAI Tunisia — تقرير فحص الحقل. جرّب تشخيص نبتتك: https://shilikhalile.github.io/thala-farm/';
+  if (navigator.share) await navigator.share({ title: 'AgriAI Tunisia', text });
+  else { await navigator.clipboard?.writeText(text); alert('تنسخ التقرير. تنجم تبعثو لأي واحد.'); }
+});
