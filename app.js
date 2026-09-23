@@ -174,3 +174,58 @@ document.querySelector('#shareReport')?.addEventListener('click', async () => {
   if (navigator.share) await navigator.share({ title: 'AgriAI Tunisia', text });
   else { await navigator.clipboard?.writeText(text); alert('تنسخ التقرير. تنجم تبعثو لأي واحد.'); }
 });
+
+const weatherState = { label: 'الطقس موش متوفر توا', temp: null, advice: 'عاود جرّب بعد شوية.' };
+const weatherLabels = { 0: 'صحو', 1: 'صحو غالباً', 2: 'سحب خفيفة', 3: 'غائم', 45: 'ضباب', 48: 'ضباب', 51: 'رذاذ', 53: 'رذاذ', 61: 'مطر خفيف', 63: 'مطر', 65: 'مطر قوي', 71: 'ثلج خفيف', 80: 'زخات مطر', 81: 'زخات مطر', 82: 'زخات قوية', 95: 'عواصف' };
+async function loadWeather() {
+  const url = 'https://api.open-meteo.com/v1/forecast?latitude=35.58&longitude=8.68&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Africa%2FTunis&forecast_days=3';
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('weather request failed');
+    const data = await response.json();
+    const current = data.current;
+    const label = weatherLabels[current.weather_code] || 'طقس متبدّل';
+    weatherState.label = label;
+    weatherState.temp = Math.round(current.temperature_2m);
+    weatherState.advice = current.weather_code >= 51 ? 'استنّى شوية قبل الرشّ' : 'الوقت مناسب للفحص';
+    document.querySelector('#weatherNow').textContent = `${weatherState.temp}° · ${label}`;
+    document.querySelector('#weatherAdvice').textContent = weatherState.advice;
+    document.querySelector('#weatherDetails').textContent = `رطوبة ${current.relative_humidity_2m}% · رياح ${Math.round(current.wind_speed_10m)} كم/س`;
+    const days = data.daily.time.map((date, index) => `<span><b>${index === 0 ? 'اليوم' : index === 1 ? 'غدوة' : 'بعد غدوة'}</b>${Math.round(data.daily.temperature_2m_max[index])}° · ${weatherLabels[data.daily.weather_code[index]] || 'متبدّل'}</span>`).join('');
+    document.querySelector('#forecast').innerHTML = days;
+  } catch (error) {
+    document.querySelector('#weatherNow').textContent = 'الطقس موش متوفر';
+    document.querySelector('#weatherAdvice').textContent = 'ما قدرناش نجيبو الطقس توا';
+    document.querySelector('#weatherDetails').textContent = 'تثبت من الكونكسيون وعاود جرّب';
+  }
+}
+loadWeather();
+
+const chatMessages = document.querySelector('#chatMessages');
+const chatInput = document.querySelector('#chatInput');
+const chatForm = document.querySelector('#chatForm');
+function addMessage(text, type) {
+  const message = document.createElement('div');
+  message.className = `message ${type}`;
+  message.textContent = text;
+  chatMessages?.appendChild(message);
+  if (chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+function assistantReply(question) {
+  const q = question.toLowerCase();
+  if (q.includes('طقس') || q.includes('جو') || q.includes('مطر') || q.includes('حرارة')) return `توا في ثالة: ${weatherState.temp ? `${weatherState.temp}° و${weatherState.label}` : weatherState.label}. ${weatherState.advice}`;
+  if (q.includes('صوّر') || q.includes('تصوير') || q.includes('تصويرة')) return 'صوّر الورقة في ضوء طبيعي، من فوق ومن تحت، وخلي الصورة واضحة. تنجم ترفع حتى 3 تصاور لنفس النبتة.';
+  if (q.includes('مرض') || q.includes('بقع') || q.includes('اصفرار') || q.includes('حشرة')) return 'ارفع تصاور للورقة كاملة وقريبة. AgriAI يقارن اللون والبقع والجفاف ويعطيك قراءة أولية، أما ما تستعملش علاج قبل التثبت.';
+  if (q.includes('شنوة') && (q.includes('تعمل') || q.includes('منصّة') || q.includes('agriai'))) return 'نعاونك تفحص نبتتك بالتصويرة، تتابع حالة الحقل، وتشوف طقس ثالة. اختار المحصول وزيد الأعراض اللي لاحظتهم.';
+  if (q.includes('زيتون') || q.includes('طماطم') || q.includes('تمور')) return 'اختار نوع المحصول من بطاقة الفحص، وبعد ارفع تصاور واضحة. كل ما تزيد تصاور من زوايا مختلفة، القراءة تولّي أحسن.';
+  return 'فهمتك. اسألني على الطقس، طريقة التصوير، أمراض الأوراق، أو كيفاش تستعمل AgriAI.';
+}
+function sendChat(text) {
+  const clean = text.trim();
+  if (!clean) return;
+  addMessage(clean, 'user');
+  chatInput.value = '';
+  setTimeout(() => addMessage(assistantReply(clean), 'bot'), 320);
+}
+chatForm?.addEventListener('submit', (event) => { event.preventDefault(); sendChat(chatInput.value); });
+document.querySelectorAll('.assistant-prompts button').forEach((button) => button.addEventListener('click', () => sendChat(button.dataset.prompt)));
